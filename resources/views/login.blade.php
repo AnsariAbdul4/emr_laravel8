@@ -46,11 +46,23 @@
               </a>
               <hr />
               <br />
-              <form action="login" method="post">
+              <form action="/" method="post">
+                @csrf
+                <?php 
+                  if(session('error') !== null){ 
+                    echo '<span class="error" style="color:red">'.session('error').'</span>';  
+                  }
+                ?>
                 <?php // echo form_error('email','<span class="error" style="color:red">', '</span>'); ?>
                 <input name="email" id="email" type="text" class="form-control" placeholder="Enter Email ID">
+                @error('email')
+                  <span class="error" style="color:red">{{ $message }}</span> <br/><br/>
+                @enderror
                 <?php // echo form_error('password','<span class="error" style="color:red">', '</span>'); ?>
                 <input name="password" id="password" type="password" class="form-control" placeholder="Enter Password">
+                @error('password')
+                  <span class="error" style="color:red">{{ $message }}</span> <br/><br/>
+                @enderror
                 <a href="#">Forgot Password</a><br /><br />
                 <button class="btn btn-gray btn-cust-lg center btn-block" type="submit">Login</button>
               </form>

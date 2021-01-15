@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Login_controller;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/','login');
+Route::post('/', [Login_controller::class, 'login']);
+Route::group(['middleware' => ['islogin']], function(){
+  Route::get('/dashbord',[Login_controller::class, 'dashbord']);
+});
