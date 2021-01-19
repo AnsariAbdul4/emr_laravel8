@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Login_controller;
-
+use App\Http\Controllers\user_controller;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,17 @@ use App\Http\Controllers\Login_controller;
   });
 */
 
-Route::view('/','login');
+// Route::view('/','login');
+Route::get('/', function(){
+  if(session()->has('user_data')){
+    return redirect('/dashboard');
+  }
+  return view('login');
+});
 Route::post('/', [Login_controller::class, 'login']);
 Route::group(['middleware' => ['islogin']], function(){
-  Route::get('/dashbord',[Login_controller::class, 'dashbord']);
+  Route::get('/dashboard',[Login_controller::class, 'user.dashboard']);
+  Route::get('/logout', [Login_controller::class, 'logout']);
+  Route::get('/profile', [user_controller::class, 'profile']);
+  Route::get('user/profile/{id}', [user_controller::class, 'showprofile']);
 });

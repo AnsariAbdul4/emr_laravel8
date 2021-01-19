@@ -16,6 +16,9 @@
         <h1 class="headnode"> <?php echo $user_detail->first_name; ?> </h1>
         <p> Last Login: 
             <?php
+              if(session()->has('user_data')){
+                echo date('d M Y', strtotime(session('user_data')['last_login']));
+              }
               /*
                 if ($session['last_login'] == '') {
                   echo '';

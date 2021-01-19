@@ -23,14 +23,14 @@
           <a href="#" class="user-btn" data-toggle="dropdown" data-hover="dropdown" data-delay="50" data-close-others="true" aria-haspopup="true" aria-expanded="false">  <?php echo $user_detail->first_name; ?> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">My Account</a></li>
-            <li><a href="users/changepassword">Change Password</a></li>
+            <li><a href="changepassword">Change Password</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="login/logout">Sign Out</a></li>
+            <li><a href="logout">Sign Out</a></li>
           </ul>
           <span class="font-bold">|</span>
         </div>
-        <p class="pull-right"><span class="font-bold">|</span> Logged in at 
-        <?php // echo $session['logged_in_time']; ?> &nbsp;<span class="font-bold">|</span>&nbsp;</p>
+        <p class="pull-right"><span class="font-bold">|</span> Logged in at  
+        <?php echo session('user_data')['logged_in_time']; // echo $session['logged_in_time']; ?> &nbsp;<span class="font-bold">|</span>&nbsp;</p>
         <div class="btn-group pull-right">
           <a href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-envelope-o"></i>

@@ -7,12 +7,12 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-left">
           <li class="dropdown">
-            <a href="users/dashboard" class="dropdown-toggle" data-delay="50" data-close-others="true">
+            <a href="/dashboard" class="dropdown-toggle" data-delay="50" data-close-others="true">
               <i class="fa fa-home icon-2x"></i>Dashboard
             </a>
           </li>
           <li class="dropdown">
-            <a href="users/myprofile" class="dropdown-toggle" data-close-others="true"><i class="fa fa-address-card-o"></i> My Profile</a>
+            <a href="/profile" class="dropdown-toggle" data-close-others="true"><i class="fa fa-address-card-o"></i> My Profile</a>
           </li>
           <li class="dropdown">
             <a href="relatives/relatives" class="dropdown-toggle" data-close-others="true"><i class="fa fa-address-card-o"></i> Family Members</a>

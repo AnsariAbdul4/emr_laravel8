@@ -1,4 +1,4 @@
-@extends('template\layout');
+@extends('template.layout');
 @section('content')
   <?php $user_detail = session('user_details');   ?>
   <div class="col-lg-10 col-md-10 col-sm-9 col-xs-12 neg-mar-l-15 user-area">
